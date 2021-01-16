@@ -28,3 +28,25 @@ function start(){
 
     	
 }
+function remove() {
+    var elem = document.getElementById('startBtn');
+    elem.parentNode.removeChild(elem);
+    return false;
+}
+function pageInit() {
+    // Hook up the "remove dummy" button
+    var btn = document.getElementById('startBtn');
+    if (btn.addEventListener){
+        // DOM2 standard
+        btn.addEventListener('click', remove, false);
+    }
+    else if (btn.attachEvent) {
+        // IE (IE9 finally supports the above, though)
+        btn.attachEvent('onclick', remove);
+    }
+    else {
+        // Really old or non-standard browser, try DOM0
+        btn.onclick = remove;
+    }
+}
+pageInit();
