@@ -5,6 +5,7 @@ body{
 	height:100vh;
 	
 }
+
 .head1{
 	position:absolute;
 	left: 43.5%;
@@ -23,8 +24,8 @@ h2{
 	border:none;
 	outline:none;
 	height:40px;
-	color:red;
-	background:white;
+	color:white;
+	background:red;
 	border-radius:20px;
 	width:200px;
 }
@@ -42,3 +43,24 @@ h2{
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+#textStart p{
+	position: absolute;
+	color: red;
+	left: 55%;
+	top: -155%;
+   -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+#imageStart{
+	position:absolute;
+	left: 15%;
+	top: 50%;
+}
+
+
+
+
+
+
+
+
