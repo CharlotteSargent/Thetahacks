@@ -1,1 +1,31 @@
+body{
+	background-position: absolute;
+	background: url("https://wallpaperaccess.com/full/2015334.jpg") no-repeat, linear-gradient(rgba(0,0,0,0),black);
+	background-size: cover;	
+	height:100vh;
+	
+}
+.head1{
+	position:absolute;
+	left: 43.5%;
+	top:5%;
+	color:white;
+	font-size: 50 px;
+}
+h2{
+	color: white;
+	position:absolute;
+	left: 40.5%;
+	top:15%;
+}
 
+.s button{
+	border:none;
+	outline:none;
+	height:40px;
+	color:white;
+	background:grey;
+	border-radius:20px;
+	margin-top:10%;
+	width:20%;
+}
