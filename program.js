@@ -8,19 +8,24 @@ ctx.fillStyle = "blue";
 ctx.fillRect(0, 0, cvs.width, cvs.height);*/
 //images
 var m = new Image();
-//bgs.id = "bgt";
 m.src = "images/bgt.png";
+
+
 var sScreen = new Image();
 sScreen.src = "images/CRIMEBG.png";
 bgImageStart();
 
-	//rect
-	ctx.beginPath();
-	ctx.lineWidth = "2";
-	ctx.strokeStyle = "yellow";
-	ctx.rect(270,70,500,100);
-	ctx.stroke();
-	
+//Scene1
+var oneBg = new Image();
+oneBg.src = "images/base.png";
+
+var t = new Image();
+t.src = "images/tp2.png";
+
+var od = new Image();
+od.src = "images/op1.png";
+
+
 function startScreen(){
 
 	
@@ -52,15 +57,16 @@ function startScreen(){
 function bgImageStart(){
 	//ctx.drawImage(sScreen,0,0,x,y);
 	ctx.drawImage(sScreen,0,0,x,y);
-	ctx.drawImage(m,650,250,200,300);	
+	ctx.drawImage(m,650,250,200,300);		
 	requestAnimationFrame(bgImageStart);
 	
 
 }
 
 function start(){
-  	ctx.clearRect(0,0,800,800);
-    		requestAnimationFrame(start);
+  	ctx.clearRect(0,0,x,y);
+	SOI();
+    requestAnimationFrame(start);
 }
 function remove() {
     var elem = document.getElementById('container');	 
@@ -87,3 +93,22 @@ function pageInit() {
     }
 }
 pageInit();
+
+	
+	function SOI(){
+		ctx.drawImage(oneBg,0,0,x,y);
+		ctx.drawImage(t,2,200,300,300);
+		ctx.drawImage(od,390,200,300,300);
+		requestAnimationFrame(SOI);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
