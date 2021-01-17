@@ -1,23 +1,29 @@
 var cvs = document.getElementById("canvas");
 var ctx = cvs.getContext("2d");
 
-//canvas bg
-ctx.fillStyle = "grey";
-ctx.fillRect(0, 0, cvs.width, cvs.height);
-//mages
-var bgs = new Image();
-bgs.id = "bgt";
-bgs.src = "images/bgt.png";
+var x = cvs.width;
+var y = cvs.height;
+/*canvas bg
+ctx.fillStyle = "blue";
+ctx.fillRect(0, 0, cvs.width, cvs.height);*/
+//images
+var m = new Image();
+//bgs.id = "bgt";
+m.src = "images/bgt.png";
+var sScreen = new Image();
+sScreen.src = "images/CRIMEBG.png";
+bgImageStart();
 
 	//rect
 	ctx.beginPath();
-	ctx.lineWidth = "6";
-	ctx.strokeStyle = "white";
+	ctx.lineWidth = "2";
+	ctx.strokeStyle = "yellow";
 	ctx.rect(270,70,500,100);
 	ctx.stroke();
 	
-	bgImageStart();
 function startScreen(){
+
+	
 	//text
     ctx.font = "30px Comic Sans MS";
     ctx.fillStyle = "red";
@@ -37,20 +43,24 @@ function startScreen(){
     document.getElementById("submit").onclick = function() {
         var name = document.getElementById("name").value;
         console.log(name);
-    };
+     };
     //document.getElementById("name").style.
 	
 }
 
 
 function bgImageStart(){
-	ctx.drawImage(bgs,-150,100,500,500);
+	//ctx.drawImage(sScreen,0,0,x,y);
+	ctx.drawImage(sScreen,0,0,x,y);
+	ctx.drawImage(m,650,250,200,300);	
 	requestAnimationFrame(bgImageStart);
+	
 
 }
+
 function start(){
-  	ctx.clearRect(0, 0, cvs.width, cvs.height);
-    	
+  	ctx.clearRect(0,0,800,800);
+    		requestAnimationFrame(start);
 }
 function remove() {
     var elem = document.getElementById('container');	 
@@ -65,6 +75,7 @@ function pageInit() {
     if (btn.addEventListener){
         // DOM2 standard
         btn.addEventListener('click', remove, false);
+	
     }
     else if (btn.attachEvent) {
         // IE (IE9 finally supports the above, though)
