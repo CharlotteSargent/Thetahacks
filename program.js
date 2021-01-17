@@ -1,3 +1,10 @@
+var printName = document.createElement("p");
+var printText = document.createTextNode("Welcome / start murder etc -- u can change hte text here", name );
+printName.appendChild(printText);
+document.getElementById("random").appendChild(printName);
+
+
+
 var cvs = document.getElementById("canvas");
 var ctx = cvs.getContext("2d");
 
